@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
@@ -64,3 +65,16 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+=======
+# Laravel Registration Webpage
+
+This repository contains a Laravel project that implements a registration webpage with the following features:
+
+1. Registration form for new users with client-side and server-side validations.
+2. Storing user data in the database with password encryption.
+3. Sending an automatic email notification to the system admin upon a new user registration.
+4. Support for multi-language (English and Arabic).
+5. Integration of Laravel Master layout to include header and footer pages.
+6. Support for AJAX requests and integration with a born-in-the-same-day API.
+7. Automated Laravel tests, including feature tests for inserting a new student and verifying successful insertion.
+>>>>>>> 78179e7f04e6d19d5ab238b02c03101d71b2510c
