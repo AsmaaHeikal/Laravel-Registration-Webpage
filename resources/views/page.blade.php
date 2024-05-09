@@ -165,7 +165,7 @@
                            <td> <b> Birthdate <span style="color:red"> * </span></b> </td>
                            <td>
                                <input type="date" name="birthdate" min='1899-01-01' max='2005-12-31' />
-                               <button type="button" id="checkActors" onclick="window.location.href=@include('Actors_Names')">check</button>
+                               <button type="button" id="checkActors" onclick="window.location.href='Actors_Names.php'">check</button>
                            </td>
                        </tr>
                        <tr>
