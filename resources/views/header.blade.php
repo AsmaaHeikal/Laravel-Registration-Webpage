@@ -36,8 +36,10 @@
     <header>
         <h1>FCAI CU</h1>
         <nav>
-            <a href="index.php">Home</a>
-            <a href="index.php">Login</a>
-            <a href="index.php">About</a>
+            <a href="index.php">@lang('mycustom.Home')</a>
+            <a href="index.php">@lang('mycustom.Login')</a>
+            <a href="index.php">@lang('mycustom.About')</a>
+            <a href="{{route("locale",'ar')}}">AR</a>
+            <a href="{{route("locale",'en')}}">EN</a>
         </nav>
     </header>

@@ -140,189 +140,189 @@
            @include('header')
            <section class="page-body">
                <div class="title">
-                   <h1> Registration Form </h1>
+                   <h1> @lang('mycustom.RegistrationForm')</h1>
                </div>
-               <form method="post" enctype="multipart/form-data" id="form">
-                   <table>
-                       <tr>
-                           <td colspan="2"> <?php echo @$msg; ?> </td>
-                           <div class="form-message"></div>
-                       </tr>
-                       <div class="form-message"></div>
-                       <tr>
-                           <td width="159"> <b> Full Name <span style="color:red"> * </span></b> </td>
-                           <td width="218">
-                               <input type="text" placeholder="Enter your full name" name="n" pattern="[a-z A-Z]*" />
-                           </td>
-                       </tr>
-                       <tr>
-                           <td width="159"> <b> Username<span style="color:red"> * </span> </b> </td>
-                           <td width="218">
-                               <input type="text" placeholder="Enter your username" name="u" pattern="[a-z A-Z]*" />
-                           </td>
-                       </tr>
-                       <tr>
-                           <td> <b> Birthdate <span style="color:red"> * </span></b> </td>
-                           <td>
-                               <input type="date" name="birthdate" min='1899-01-01' max='2005-12-31' />
-                               <button type="button" id="checkActors" >check</button>
-                           </td>
-                       </tr>
-                       <tr>
-                           <td> <b> Phone Number <span style="color:red"> * </span></b> </td>
-                           <td> <input type="text" pattern="[0-9]*" name="m" / placeholder=" Enter your phone number" /> </td>
-                       </tr>
-                       <tr>
-                           <td> <b> Address <span style="color:red"> * </span> </b> </td>
-                           <td> <textarea name="add" placeholder="Enter your address"></textarea> </td>
-                       </tr>
-                       <tr>
-                           <td> <b> Password <span style="color:red"> * </span></b> </td>
-                           <td> <input type="password" name="p" / placeholder=" Enter password"> </td>
-                       </tr>
-                       <tr>
-                           <td> <b> Confirm Password <span style="color:red"> * </span></b> </td>
-                           <td> <input type="password" name="cp" / placeholder=" Confirm password"> </td>
-                       </tr>
-                       <tr>
-                           <td> <b> Profile Picture<span style="color:red"> * </span> </b> </td>
-                           <td> <input type="file" name="pic" /> </td>
-                           <!-- <td>
-                               <p class="error pic-error">
-                                   {{-- <?php echo $pic_error ?> --}}
-                               </p>
-                           </td> -->
-                       </tr>
-                       <tr>
-                           <td> <b> Email<span style="color:red"> * </span> </b> </td>
-                           <td> <input type="email" name="e" / placeholder="Enter your email" /> </td>
-                       </tr>
-                       <tr>
-                           <td colspan="2" align="center">
-                               <input type="submit" name="save" value="Register" onclick="submitForm()" id="btn" />
-                               <input type="reset" value="Reset" />
-                           </td>
-                       </tr>
-                   </table>
-               </form>
+               <form action="#" method="post" enctype="multipart/form-data" id="form">
+                <table>
+                    <tr>
+                        <td colspan="2"> <?php echo @$msg; ?> </td>
+                        <div class="form-message"></div>
+                    </tr>
+                    <div class="form-message"></div>
+                    <tr>
+                        <td width="159"> <b>@lang('mycustom.fullname')<span style="color:red"> * </span></b> </td>
+                        <td width="218">
+                            <input type="text" placeholder="@lang('mycustom.namecontant')" name="n" pattern="[a-z A-Z]*" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="159"> <b> @lang('mycustom.username')<span style="color:red"> * </span> </b> </td>
+                        <td width="218">
+                            <input type="text"  placeholder="@lang('mycustom.usercontant')"name="u" pattern="[a-z A-Z]*" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> <b> @lang('mycustom.bithdate') <span style="color:red"> * </span></b> </td>
+                        <td>
+                            <input type="date" name="birthdate" min='1899-01-01' max='2005-12-31' />
+                            <button type="button" id="checkActors" onclick="window.location.href='Actors_Names.php'">check</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> <b> @lang('mycustom.phone') <span style="color:red"> * </span></b> </td>
+                        <td> <input type="text" pattern="[0-9]*" name="m" / placeholder="@lang('mycustom.phonecontant')" /> </td>
+                    </tr>
+                    <tr>
+                        <td> <b> @lang('mycustom.address') <span style="color:red"> * </span> </b> </td>
+                        <td> <textarea name="add" placeholder="@lang('mycustom.addresscontant')"></textarea> </td>
+                    </tr>
+                    <tr>
+                        <td> <b> @lang('mycustom.password') <span style="color:red"> * </span></b> </td>
+                        <td> <input type="password" name="p" / placeholder="@lang('mycustom.passordcontant')"> </td>
+                    </tr>
+                    <tr>
+                        <td> <b> @lang('mycustom.copassword')<span style="color:red"> * </span></b> </td>
+                        <td> <input type="password" name="cp" / placeholder="@lang('mycustom.conpassordcontant')"> </td>
+                    </tr>
+                    <tr>
+                        <td> <b>@lang('mycustom.picture')<span style="color:red"> * </span> </b> </td>
+                        <td> <input type="file" name="pic" /> </td>
+                        <!-- <td>
+                            <p class="error pic-error">
+                                {{-- <?php echo $pic_error ?> --}}
+                            </p>
+                        </td> -->
+                    </tr>
+                    <tr>
+                        <td> <b> @lang('mycustom.email')<span style="color:red"> * </span> </b> </td>
+                        <td> <input type="email" name="e" / placeholder="@lang('mycustom.emailcontant')"/> </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">
+                            <input type="submit" name="save" value="@lang('mycustom.Register')" onclick="submitForm()" id="btn" />
+                            <input type="reset" value="@lang('mycustom.Reset')" />
+                        </td>
+                    </tr>
+                </table>
+            </form>
                <div id="actorDetails"></div>
            </section>
            @include('footer')
            <script>
-               document.getElementById("btn").addEventListener('click', function(event) {
-                   event.preventDefault();
-                   submitForm();
-               });
-
-               function submitForm() {
-                   var isValid = true;
-                   var displaymsg = document.getElementsByClassName('form-message')[0];
-                   displaymsg.innerHTML = '';
-
-                   var fullName = document.getElementsByName('n')[0].value;
-                   var username = document.getElementsByName('u')[0].value;
-                   var birthdate = document.getElementsByName('birthdate')[0].value;
-                   var phoneNumber = document.getElementsByName('m')[0].value;
-                   var password = document.getElementsByName('p')[0].value;
-                   var confirmPassword = document.getElementsByName('cp')[0].value;
-                   var email = document.getElementsByName('e')[0].value;
-                   var Profile_Picture = document.getElementsByName('pic')[0].value;
-                   var Address = document.getElementsByName('add')[0].value;
-
-                   // Perform input validation
-                   if (fullName.trim() === '' || username.trim() === '' || birthdate.trim() === '' || phoneNumber.trim() === '' || password.trim() === '' || confirmPassword.trim() === '' || email.trim() === '' || Profile_Picture.trim() === '' || Address.trim() === '') {
-                       displaymsg.innerHTML += "- Please enter all required fields<br>";
-                       isValid = false;
-                   } else {
-                       if (!/^[a-zA-Z ]*$/.test(fullName)) {
-                           displaymsg.innerHTML += "- Full Name should contain only characters<br>";
-                           isValid = false;
-                       }
-                       if (!/^[a-zA-Z0-9_]+$/.test(username)) {
-                           displaymsg.innerHTML += "- Username must contain only alphanumeric characters and underscores.";
-                           isValid = false;
-                       }
-                       var fileInput = document.getElementsByName('pic')[0];
-                       var file = fileInput.files[0];
-                       var fileType = file.type.toLowerCase();
-                       var allowedExts = ["image/jpg", "image/jpeg", "image/png", "image/gif"];
-                       if (!allowedExts.includes(fileType)) {
-                           displaymsg.innerHTML += "- Profile Picture must be an image (jpg, jpeg, png, gif).<br>";
-                           isValid = false;
-                       }
-
-                       var birthdateDateTime = new Date(birthdate);
-                       var minBirthdate = new Date('1899-01-01');
-                       var maxBirthdate = new Date('2005-12-31');
-                       if (isNaN(birthdateDateTime) || birthdateDateTime < minBirthdate || birthdateDateTime > maxBirthdate) {
-                           displaymsg.innerHTML += "- Enter a valid birthdate between 1899-01-01 and 2005-12-31.<br>";
-                           isValid = false;
-                       }
-
-                       if (!/^\d{11}$/.test(phoneNumber)) {
-                           displaymsg.innerHTML += "- Phone number must consist of exactly 11 digits.<br>";
-                           isValid = false;
-                       }
-
-                       if (password !== confirmPassword) {
-                           displaymsg.innerHTML += "- Passwords do not match.<br>";
-                           isValid = false;
-                       } else if (password.length < 8 || !/[A-Z]/.test(password) || !/[a-z]/.test(password) || !/\d/.test(password) || !/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/.test(password)) {
-                           displaymsg.innerHTML += "- Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one digit, and one special character.<br>";
-                           isValid = false;
-                       }
-
-                       if (!/^[\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,}$/.test(email)) {
-                           displaymsg.innerHTML += "- Invalid email format<br>";
-                           isValid = false;
-                       }
-                   }
-
-                   if (!isValid) {
-                       displaymsg.style.color = "red";
-                       displaymsg.style.display = "block";
-                       displaymsg.scrollIntoView({
-                           behavior: 'smooth',
-                           block: 'start'
-                       });
-                       return;
-                   }
-
-                   if (submitForm.isSubmitting) {
-                       return;
-                   }
-
-                   submitForm.isSubmitting = true;
-
-                   var xmlhttp;
-                   if (window.XMLHttpRequest) {
-                       xmlhttp = new XMLHttpRequest();
-                   } else if (window.ActiveXObject) {
-                       xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-                   }
-                   xmlhttp.open("POST", "Controller.php", true);
-                   xmlhttp.onreadystatechange = function() {
-                       if (this.readyState === 4 && this.status === 200) {
-                           if (this.responseText.includes("Registration Success")) {
-                               displaymsg.style.color = "green";
-                               document.getElementById('form').reset();
-                           } else {
-                               displaymsg.style.color = "red";
-                           }
-                           displaymsg.innerHTML = this.responseText;
-                           displaymsg.style.display = "block";
-                           displaymsg.scrollIntoView({
-                               behavior: 'smooth',
-                               block: 'start'
-                           });
-                           submitForm.isSubmitting = false;
-                       }
-                   };
-                   var form = document.getElementById('form');
-                   var formdata = new FormData(form);
-                   xmlhttp.send(formdata);
-               }
-           </script>
+            document.getElementById("btn").addEventListener('click', function(event) {
+                event.preventDefault();
+                submitForm();
+            });
+        
+            function submitForm() {
+                var isValid = true;
+                var displaymsg = document.getElementsByClassName('form-message')[0];
+                displaymsg.innerHTML = '';
+        
+                var fullName = document.getElementsByName('n')[0].value;
+                var username = document.getElementsByName('u')[0].value;
+                var birthdate = document.getElementsByName('birthdate')[0].value;
+                var phoneNumber = document.getElementsByName('m')[0].value;
+                var password = document.getElementsByName('p')[0].value;
+                var confirmPassword = document.getElementsByName('cp')[0].value;
+                var email = document.getElementsByName('e')[0].value;
+                var Profile_Picture = document.getElementsByName('pic')[0].value;
+                var Address = document.getElementsByName('add')[0].value;
+        
+                // Perform input validation
+                if (fullName.trim() === '' || username.trim() === '' || birthdate.trim() === '' || phoneNumber.trim() === '' || password.trim() === '' || confirmPassword.trim() === '' || email.trim() === '' || Profile_Picture.trim() === '' || Address.trim() === '') {
+                    displaymsg.innerHTML += " @lang('mycustom.error1')<br>";
+                    isValid = false;
+                } else {
+                    if (!/^[a-zA-Z ]*$/.test(fullName)) {
+                        displaymsg.innerHTML += " @lang('mycustom.error2')<br>";
+                        isValid = false;
+                    }
+                    if (!/^[a-zA-Z0-9_]+$/.test(username)) {
+                        displaymsg.innerHTML += " @lang('mycustom.error3')<br>";
+                        isValid = false;
+                    }
+                    var fileInput = document.getElementsByName('pic')[0];
+                    var file = fileInput.files[0];
+                    var fileType = file.type.toLowerCase();
+                    var allowedExts = ["image/jpg", "image/jpeg", "image/png", "image/gif"];
+                    if (!allowedExts.includes(fileType)) {
+                        displaymsg.innerHTML += "@lang('mycustom.error4')<br>";
+                        isValid = false;
+                    }
+        
+                    var birthdateDateTime = new Date(birthdate);
+                    var minBirthdate = new Date('1899-01-01');
+                    var maxBirthdate = new Date('2005-12-31');
+                    if (isNaN(birthdateDateTime) || birthdateDateTime < minBirthdate || birthdateDateTime > maxBirthdate) {
+                        displaymsg.innerHTML += " @lang('mycustom.error5')<br>";
+                        isValid = false;
+                    }
+        
+                    if (!/^\d{11}$/.test(phoneNumber)) {
+                        displaymsg.innerHTML += "@lang('mycustom.error6')<br>";
+                        isValid = false;
+                    }
+        
+                    if (password !== confirmPassword) {
+                        displaymsg.innerHTML += "@lang('mycustom.error7')<br>";
+                        isValid = false;
+                    } else if (password.length < 8 || !/[A-Z]/.test(password) || !/[a-z]/.test(password) || !/\d/.test(password) || !/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/.test(password)) {
+                        displaymsg.innerHTML += " @lang('mycustom.error8')<br>";
+                        isValid = false;
+                    }
+        
+                    if (!/^[\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,}$/.test(email)) {
+                        displaymsg.innerHTML += " @lang('mycustom.error9')<br>";
+                        isValid = false;
+                    }
+                }
+        
+                if (!isValid) {
+                    displaymsg.style.color = "red";
+                    displaymsg.style.display = "block";
+                    displaymsg.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    return;
+                }
+        
+                if (submitForm.isSubmitting) {
+                    return;
+                }
+        
+                submitForm.isSubmitting = true;
+        
+                var xmlhttp;
+                if (window.XMLHttpRequest) {
+                    xmlhttp = new XMLHttpRequest();
+                } else if (window.ActiveXObject) {
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.open("POST", "Controller.php", true);
+                xmlhttp.onreadystatechange = function() {
+                    if (this.readyState === 4 && this.status === 200) {
+                        if (this.responseText.includes("Registration Success")) {
+                            displaymsg.style.color = "green";
+                            document.getElementById('form').reset();
+                        } else {
+                            displaymsg.style.color = "red";
+                        }
+                        displaymsg.innerHTML = this.responseText;
+                        displaymsg.style.display = "block";
+                        displaymsg.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        submitForm.isSubmitting = false;
+                    }
+                };
+                var form = document.getElementById('form');
+                var formdata = new FormData(form);
+                xmlhttp.send(formdata);
+            }
+        </script>
            <script>
                document.getElementById('checkActors').addEventListener('click', function() {
                    var birthdate = document.getElementsByName('birthdate')[0].value;
