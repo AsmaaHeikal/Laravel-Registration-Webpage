@@ -14,9 +14,11 @@
             height: 70px;
         }
 
-
+        header h1{
+            margin-left: 20px;
+        }
         header nav {
-            margin-left: 750px;
+            margin-left: 600px;
         }
         header h1, header nav {
             display: inline-block; /* Set both h1 and nav to inline-block */
@@ -25,7 +27,7 @@
         header nav a {
             color: #ffffff;
             text-decoration: none;
-            margin-left: 50px;
+            margin-left: 30px;
             font-size: large;
             /* Add some space between the links */
         }
