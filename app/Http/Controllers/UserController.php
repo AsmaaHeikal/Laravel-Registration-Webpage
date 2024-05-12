@@ -8,6 +8,18 @@ use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
+    public function Upload(Request $req)
+    {
+        if ($req->hasFile('pic')) {
+            $file = $req->file('pic');
+            $fileName = time() . '_' . $file->getClientOriginalName();
+            $file->storeAs('public/profile_pictures', $fileName);
+            return 'profile_pictures/' . $fileName;
+        }
+
+        return null;
+    }
+
     public function submitdata(Request $req)
     {
         // Validation rules
@@ -33,7 +45,7 @@ class UserController extends Controller
         // if ($validator->fails()) {
         //     return response()->json(['success' => false, 'message' => $validator->errors()->all()]);
         // }
-
+        
         // Validation passed, proceed with insertion
         $user = new UserModel;
         $user->full_name = $req->n;
@@ -43,16 +55,11 @@ class UserController extends Controller
         $user->address = $req->add;
         $user->email = $req->e;
         $user->password = $req->p;
-        
-        // Handle file upload
-        // if ($req->hasFile('pic')) {
-        //     $file = $req->file('pic');
-        //     $fileName = time() . '_' . $file->getClientOriginalName();
-        //     $file->storeAs('public/profile_pictures', $fileName);
-        //     $user->profile_picture = 'profile_pictures/' . $fileName;
-        // }
+ 
 
         $user->save();
+
+        $profilePicturePath = $this->Upload($req);
 
         return response()->json(['success' => true, 'message' => 'Registration Success']);
     }
