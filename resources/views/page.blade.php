@@ -142,13 +142,20 @@
             <div class="title">
                 <h1> @lang('mycustom.RegistrationForm')</h1>
             </div>
-            <form action="#" method="post" enctype="multipart/form-data" id="form">
+            <form action="{{route('Registration')}}" method="post" enctype="multipart/form-data" id="form">
+                @csrf
                 <table>
                     <tr>
                         <td colspan="2"> <?php echo @$msg; ?> </td>
                         <div class="form-message"></div>
                     </tr>
-                    <div class="form-message"></div>
+                    <div class="form-message"> 
+                        @if ($errors->any())
+                        @foreach ($errors->all() as $error)
+                            {{$error}}<br>
+                        @endforeach
+                    @endif  
+                </div>
                     <tr>
                         <td width="159"> <b>@lang('mycustom.fullname')<span style="color:red"> * </span></b> </td>
                         <td width="218">
@@ -212,7 +219,7 @@
             <div id="actorDetails"></div>
         </section>
         @include('footer')
-        <script>
+        {{-- <script>
             document.getElementById("btn").addEventListener('click', function(event) {
                 event.preventDefault();
                 submitForm();
@@ -329,7 +336,7 @@
                 var formdata = new FormData(form);
                 xmlhttp.send(formdata);
             }
-        </script>
+        </script> --}}
         <script>
             document.getElementById('checkActors').addEventListener('click', function() {
                 var birthdate = document.getElementsByName('birthdate')[0].value;
