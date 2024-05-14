@@ -104,24 +104,25 @@ class UserController extends Controller
             'e' => 'required|string|email|unique:users',
         ], $customMessages, $customAttributes);
     
-        $data = [
-            'name' => $validatedData['n'],
-            'username' => $validatedData['u'],
-            'birthdate' => $validatedData['birthdate'],
-            'phone' => $validatedData['m'],
-            'password' => Hash::make($validatedData['p']),
-            'email' => $validatedData['e'],
-            //'picture' => $validatedData['pic'],
-            'address' => $validatedData['add'],
-        ];
-    
-        $user = User::create($data);
+        $user = new User();
+        $user->full_name = $validatedData['n'];
+        $user->user_name = $validatedData['u'];
+        $user->birthdate = $validatedData['birthdate'];
+        $user->phone = $validatedData['m'];
+        $user->password = Hash::make($validatedData['p']);
+        $user->email = $validatedData['e'];
+        //$user->picture = $validatedData['pic'];
+        $user->address = $validatedData['add'];
 
+        $user->save();
+    
+        //$user = User::create($data);
+    
         if (!$user) {
             return response()->json(['message' => 'Registration failed, try again.'], 500);
         }
     
         return response()->json(['message' => 'Registration successful!'], 200);
-    }
-    
+    }
+    
 }
