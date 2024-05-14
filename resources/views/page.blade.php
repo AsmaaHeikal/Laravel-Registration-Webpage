@@ -186,7 +186,7 @@
                     </tr>
                     <tr>
                         <td> <b> @lang('mycustom.copassword')<span style="color:red"> * </span></b> </td>
-                        <td> <input type="password" name="cp" / placeholder="@lang('mycustom.conpassordcontant')"> </td>
+                        <td> <input type="password" name="p_confirmation" / placeholder="@lang('mycustom.conpassordcontant')"> </td>
                     </tr>
                     <tr>
                         <td> <b>@lang('mycustom.picture')<span style="color:red"> * </span> </b> </td>
