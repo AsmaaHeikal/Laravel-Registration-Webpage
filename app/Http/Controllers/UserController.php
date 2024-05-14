@@ -96,7 +96,7 @@ class UserController extends Controller
             'n' => 'required|string|max:255',
             'u' => 'required|string|unique:users',
             'birthdate' => 'required|date|before_or_equal:2005-12-31|after_or_equal:1899-01-01',
-            'm' => 'required|string|max:11',
+            'm' => 'required|string|min:11',
             'p' => 'required|string|min:8|confirmed',
             'p_confirmation' => 'required|string|min:8',
             'pic' => 'required|image|mimes:jpg,jpeg,png,gif|max:2048',
@@ -111,12 +111,12 @@ class UserController extends Controller
             'phone' => $validatedData['m'],
             'password' => Hash::make($validatedData['p']),
             'email' => $validatedData['e'],
-            'picture' => $validatedData['pic'],
+            //'picture' => $validatedData['pic'],
             'address' => $validatedData['add'],
         ];
     
         $user = User::create($data);
-    
+
         if (!$user) {
             return response()->json(['message' => 'Registration failed, try again.'], 500);
         }
