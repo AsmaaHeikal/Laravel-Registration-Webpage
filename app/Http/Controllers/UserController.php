@@ -123,6 +123,5 @@ class UserController extends Controller
         }
     
         return response()->json(['message' => 'Registration successful!'], 200);
-    }
-    
+    }
 }
