@@ -22,16 +22,17 @@ return [
     'Home' => 'Home',
     'Login' => 'Login',
     'About' => 'About',
-    'error1' => ' Please enter all required fields',
-    'error2' =>  'Full Name should contain only characters',
-    'error3' => 'Username must contain only alphanumeric characters and underscores.',
-    'error4' => 'Profile Picture must be an image (jpg, jpeg, png, gif).',
-    'error5' => 'Enter a valid birthdate between 1899-01-01 and 2005-12-31',
-    'error6' => ' Phone number must consist of exactly 11 digits',
-    'error7' => 'Passwords do not match',
-    'error8' => 'Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one digit, and one special character',
-    'error9' => 'Invalid email format',
-
+    'error1' => 'This  :attribute field is required.',
+    'error2' =>  'The :attribute field must be a string.',
+    'error3' => 'The :attribute field must not exceed :max characters.',
+    'error4' => 'The :attribute field must be unique.',
+    'error5' => 'The :attribute field must be a valid date.',
+    'error6' => ' The :attribute field must be before or equal to :date.',
+    'error7' => 'The :attribute field must be after or equal to :date.',
+    'error8' => 'The :attribute confirmation does not match.',
+    'error9' => 'The :attribute must be an image.',
+    'error10' => 'The :attribute must be a file of type: :values.',
+    'error11' => 'This :attribute must be at least :min characters.',
 
 
 ]

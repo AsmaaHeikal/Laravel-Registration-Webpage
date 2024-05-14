@@ -65,30 +65,31 @@ class UserController extends Controller
         // return response()->json(['success' => true, 'message' => 'Registration Success']);
     }
 
-    function Registration(Request $request){
+    public function registration(Request $request) {
         $customAttributes = [
-            'n' => 'Name',
-            'u' => 'Username',
-            'birthdate' => 'Birthdate',
-            'm' => 'Mobile',
-            'p' => 'Password',
-            'cp' => 'Confirm Password',
-            'pic' => 'Profile Picture',
-            'add' => 'Address',
-            'e' => 'Email',
+            'n' => trans('mycustom.fullname'),
+            'u' => trans('mycustom.username'),
+            'birthdate' => trans('mycustom.bithdate'),
+            'm' => trans('mycustom.phone'),
+            'p' => trans('mycustom.password'),
+            'cp' => trans('mycustom.copassword'),
+            'pic' => trans('mycustom.picture'),
+            'add' => trans('mycustom.address'),
+            'e' => trans('mycustom.email'),
         ];
     
         $customMessages = [
-            'required' => 'The :attribute field is required.',
-            'string' => 'The :attribute field must be a string.',
-            'max' => 'The :attribute field must not exceed :max characters.',
-            'unique' => 'The :attribute field must be unique.',
-            'date' => 'The :attribute field must be a valid date.',
-            'before_or_equal' => 'The :attribute field must be before or equal to :date.',
-            'after_or_equal' => 'The :attribute field must be after or equal to :date.',
-            'confirmed' => 'The :attribute confirmation does not match.',
-            'image' => 'The :attribute must be an image.',
-            'mimes' => 'The :attribute must be a file of type: :values.',
+            'required' => trans('mycustom.error1'),
+            'string' => trans('mycustom.error2'),
+            'max' =>trans('mycustom.error3'),
+            'unique' => trans('mycustom.error4'),
+            'date' => trans('mycustom.error5'),
+            'before_or_equal' => trans('mycustom.error6'),
+            'after_or_equal' => trans('mycustom.error7'),
+            'confirmed' => trans('mycustom.error8'),
+            'image' => trans('mycustom.error9'),
+            'mimes' => trans('mycustom.error10'),
+            'min' => trans('mycustom.error11'),
         ];
     
         $validatedData = $request->validate([
@@ -103,21 +104,24 @@ class UserController extends Controller
             'e' => 'required|string|email|unique:users',
         ], $customMessages, $customAttributes);
     
-        $data['name'] = $validatedData['n'];
-        $data['u'] = $validatedData['u'];
-        $data['birthdate'] = $validatedData['birthdate'];
-        $data['m'] = $validatedData['m'];
-        $data['p'] = Hash::make($validatedData['p']);
-        $data['e'] = $validatedData['e'];
-        $data['pic'] = $validatedData['pic'];
-        $data['add'] = $validatedData['add'];
+        $data = [
+            'name' => $validatedData['n'],
+            'username' => $validatedData['u'],
+            'birthdate' => $validatedData['birthdate'],
+            'phone' => $validatedData['m'],
+            'password' => Hash::make($validatedData['p']),
+            'email' => $validatedData['e'],
+            'picture' => $validatedData['pic'],
+            'address' => $validatedData['add'],
+        ];
     
         $user = User::create($data);
     
-        if(!$user){
-            return redirect(route('home'))->with("error","Registration failed, try again. ");
+        if (!$user) {
+            return response()->json(['message' => 'Registration failed, try again.'], 500);
         }
-        return redirect(route('home'))->with("success","Registration success");
+    
+        return response()->json(['message' => 'Registration successful!'], 200);
     }
     
 }

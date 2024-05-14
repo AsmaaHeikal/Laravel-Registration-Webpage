@@ -17,4 +17,4 @@ Route::get('locale/{lang}',[contlang::class,'setLocale'])->name('locale');
 
 Route::post('/submitdata', [UserController::class, 'submitdata'])->name('submitdata');
 
-Route::post('/Registration',[UserController::class,'Registration'])->name('Registration');
+Route::post('/Registration',[UserController::class,'registration'])->name('Registration');
