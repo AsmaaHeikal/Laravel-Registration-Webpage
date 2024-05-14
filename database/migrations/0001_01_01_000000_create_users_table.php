@@ -20,7 +20,7 @@ return new class extends Migration
             $table->text('address');
             $table->date('birthdate');
             $table->string('email')->unique();
-            // $table->text('img_Name');
+            $table->text('img_Name');
             $table->timestamps();
         });
 

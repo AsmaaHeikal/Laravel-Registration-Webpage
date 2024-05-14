@@ -16,7 +16,7 @@ class UserController extends Controller
             $file = $req->file('pic');
             $fileName = time() . '_' . $file->getClientOriginalName();
             $file->storeAs('public/profile_pictures', $fileName);
-            return 'profile_pictures/' . $fileName;
+            return $fileName;
         }
 
         return null;
@@ -111,10 +111,14 @@ class UserController extends Controller
         $user->phone = $validatedData['m'];
         $user->password = Hash::make($validatedData['p']);
         $user->email = $validatedData['e'];
-        //$user->picture = $validatedData['pic'];
         $user->address = $validatedData['add'];
 
-        $user->save();
+    
+        $profilePicturePath = $this->Upload($request);
+        $user ->img_Name = $profilePicturePath;
+
+        $user ->save();
+
     
         //$user = User::create($data);
     
@@ -124,4 +128,5 @@ class UserController extends Controller
     
         return response()->json(['message' => 'Registration successful!'], 200);
     }
+    
 }
