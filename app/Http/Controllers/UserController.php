@@ -96,14 +96,14 @@ class UserController extends Controller
     
         $validatedData = $request->validate([
             'n' => 'required|string|max:255',
-            'u' => 'required|string|unique:users',
+            'u' => 'required|string|unique:users,user_name',
             'birthdate' => 'required|date|before_or_equal:2005-12-31|after_or_equal:1899-01-01',
             'm' => 'required|string|min:11',
             'p' => 'required|string|min:8|confirmed',
             'p_confirmation' => 'required|string|min:8',
             'pic' => 'required|image|mimes:jpg,jpeg,png,gif|max:2048',
             'add' => 'required|string',
-            'e' => 'required|string|email|unique:users',
+            'e' => 'required|string|email|unique:users,email',
         ], $customMessages, $customAttributes);
     
         $user = new User();
