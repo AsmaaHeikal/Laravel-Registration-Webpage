@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\UserModel;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\NewUserMail;
 
 class UserController extends Controller
 {
@@ -125,7 +127,8 @@ class UserController extends Controller
         if (!$user) {
             return response()->json(['message' => 'Registration failed, try again.'], 500);
         }
-    
+
+        Mail::to('asmaaiheikal@gmail.com')->send(new NewUserMail( $user->user_name));
         return response()->json(['message' => 'Registration successful!'], 200);
     }
     
