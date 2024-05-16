@@ -232,14 +232,15 @@
                         },
                         error: function (jqXHR) {
                             var errors = jqXHR.responseJSON.errors;
-                            var errorHtml = '<ul style="color: red;">'; 
+                            var firstErrorMessage  = ''; 
                             $('.error').remove(); 
             
                             $.each(errors, function (field, messages) {
-                                errorHtml += '<li>' + messages[0] + '</li>'; 
+                                firstErrorMessage  =  messages[0] ;
+                                return false; 
                             });
             
-                            errorHtml += '</ul>'; 
+                            var errorHtml = '<p style="color: red;">' + firstErrorMessage + '</p>';
                             $('.form-message').html(errorHtml); 
                             scrollToMessage();
                         }
