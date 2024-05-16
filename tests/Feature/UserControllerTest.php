@@ -4,7 +4,6 @@ namespace Tests\Feature;
 
 use App\Models\User;
 use Illuminate\Foundation\Testing\WithFaker;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Hash;
 use Tests\TestCase;
 use Illuminate\Http\UploadedFile;
@@ -12,8 +11,7 @@ use Illuminate\Support\Facades\Storage;
 
 class UserControllerTest extends TestCase
 {
-    //use WithFaker;  
-    use RefreshDatabase;
+    use WithFaker;  
 
     /**
      * Test user registration and database insertion.
