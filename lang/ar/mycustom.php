@@ -1,7 +1,7 @@
 <?php 
 return [
     'fullname' => 'الاسم الكامل',
-    'username' => 'أسم المستتخدم',
+    'username' => 'اسم المستخدم',
     'bithdate' => 'تاريخ الميلاد',
     'phone' => 'رقم الجوال',
     'address' => 'العنوان',
@@ -17,9 +17,9 @@ return [
     'conpassordcontant' => 'تأكيد كلمة المرور',
     'emailcontant' => 'أدخل بريدك الإلكتروني',
     'RegistrationForm' => 'تسجيل جديد',
-    'Register' => 'التسججيل',
+    'Register' => 'التسجيل',
     'Reset' => 'تراجع',
-    'Home' => 'الرئيسة',
+    'Home' => 'الرئيسية',
     'Login' => 'تسجيل الدخول',
     'About' => 'معلومات من نحن',
     'error1' => ' الرجاء إدخال :attribute ',
